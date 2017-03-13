@@ -1,0 +1,43 @@
+package org.bnymellon.efm.bn.test;
+
+public class Testclass1 {
+
+       public static void main(String[] args) {
+              
+       /*     String[] tableNames = new String[]{"<table1>","table2"};
+              String abc;
+              
+              String abc = "<column1>value</column1>";
+              String[] columnNames = dogetValues(abc);
+              
+              String sql = "insert into employee values( "+columnNames[1]+" = '"+columnNames[0]+"')";
+              System.out.println(sql);*/
+              doGetInsertQuery();
+       }
+       public static String[] dogetValues(String abc){
+              String[] split = null;
+              split = abc.split(">");
+              for(int i =0;i<split.length;i++) {
+                     if(i == 1) {
+                           split = split[i].split("</");
+                     }
+              }
+
+              for(int i =0;i<split.length;i++)
+                     System.out.println(split[i]);
+              return split;
+       }
+       
+       public static void doGetInsertQuery(){
+              String abc = "<LogicalTerminalResponse>BR<Time>08-Feb-2017 05:14:37</Time>BR<Status>LOGGED_OUT</Status>BR<Mode>MANUAL</Mode>BR</LogicalTerminalResponse>";
+              String[] split = abc.split("BR");
+              for(int i =0;i<split.length;i++) {
+                     if(i)
+                     dogetValues(abc1)
+              }
+              
+       }
+
+
+}
+

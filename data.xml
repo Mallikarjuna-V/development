@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+	<Table1>
+		<Time>08-Feb-2017 05:14:37</Time>
+		<Status>LOGGED_OUT</Status>
+		<Mode>MANUAL</Mode>
+	</Table1>
+	<Table1>
+		<Time>09-Feb-2017 05:14:37</Time>
+		<Status>LOGGED_OUT</Status>
+		<Mode>MANUAL</Mode>
+	</Table1>
+	
+	<Table2>
+		<Time>08-Feb-2017 05:14:37</Time>
+		<Status>LOGGED_OUT</Status>
+		<Mode>MANUAL</Mode>
+	</Table2>
+	<Table2>
+		<Time>08-Feb-2017 05:14:37</Time>
+		<Status>LOGGED_OUT</Status>
+		<Mode>MANUAL</Mode>
+	</Table2>
+	<Table3>
+		<Time>08-Feb-2017 05:14:37</Time>
+		<Status>LOGGED_OUT</Status>
+		<Mode>MANUAL</Mode>
+	</Table3>
+	
+	
+</data>

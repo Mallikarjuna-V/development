@@ -41,3 +41,13 @@ public class Testclass1 {
 
 }
 
+Rout, Pradeep 10:17 PM: 
+jaunu be
+hi
+Nayak, Brinesh 10:22 PM: 
+08-Feb-2017 05:14:37BNYMIE20BLOGGED_OUTMANUAL010000031 
+08-Feb-2017 05:14:37BNYMIE20BLOGGED_OUTMANUAL010000031 
+Rout, Pradeep 10:24 PM: 
+<LogicalTerminalResponse><Time>08-Feb-2017 05:14:37</Time><Identifier><Destination>BNYMIE20</Destination><TerminalCode>B</TerminalCode></Identifier><Status>LOGGED_OUT</Status><Mode>MANUAL</Mode><Connection></Connection><ReceivedMessage><DuringThisSession>0</DuringThisSession><SinceLastReset>10</SinceLastReset></ReceivedMessage><PendingMessage><Urgent>0</Urgent><Normal>0</Normal><System>0</System></PendingMessage><SentMessage><DuringThisSession>0</DuringThisSession><SinceLastReset>31</SinceLastReset></SentMessage></LogicalTerminalResponse> 
+
+

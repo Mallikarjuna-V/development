@@ -1,0 +1,310 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Replay Messages</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<script src="jquery-1.12.3.js"></script>
+<script>
+	$(document).ready(function() {
+
+		$('#hostname').css('background-color', '#DEDEDE');
+		$('#qname').css('background-color', '#DEDEDE');
+		$('#cname').css('background-color', '#DEDEDE');
+		$('#port').css('background-color', '#DEDEDE');
+		var x;
+		$("#qmgr").change(function() {
+			v_qMgr = $("#qmgr option:selected").text();
+			v_mType = $("#msgtype option:selected").text();
+			if (v_qMgr == "ABJA" && v_mType == "FTSIN") {
+				$("#hostname").val("xsa00y18");
+				$("#qname").val("BDC.GSC.FTSIN_INS_I");
+				$("#cname").val("ABJA.BDC.BMC.FTS");
+				$("#port").val("1491");
+			} else if (v_qMgr == "ABYA" && v_mType == "FTSIN") {
+				$("#hostname").val("a096n00");
+				$("#qname").val("BDC.GSC.FTSIN_INS_I");
+				$("#cname").val("ABYA.BDC.BMC.FTS");
+				$("#port").val("1451");
+			} else if (v_qMgr == "ABDA" && v_mType == "FTSIN") {
+				$("#hostname").val("xsa00y17");
+				$("#qname").val("BDC.GSC.FTSIN_INS_I");
+				$("#cname").val("ABDA.BDC.BMC.FTS");
+				$("#port").val("1491");
+			} else if (v_qMgr == "ABVA" && v_mType == "FTSIN") {
+				$("#hostname").val("xsaqp752");
+				$("#qname").val("BDC.GSC.FTSIN_INS_I");
+				$("#cname").val("ABVA.BDC.BMC.FTS");
+				$("#port").val("1421");
+			} else if (v_qMgr == "ABUA" && v_mType == "FTSIN") {
+				$("#hostname").val("xsa00y19");
+				$("#qname").val("BDC.GSC.FTSIN_INS_I");
+				$("#cname").val("ABUA.BDC.BMC.FTS");
+				$("#port").val("1491");
+			}
+		});
+	});
+</script>
+<style type="text/css">
+html, body {
+	margin: 5;
+	padding: 0;
+	max-width: 100%;
+	overflow-x: hidden;
+	background-color: #0F6085;
+}
+
+div.page {
+	font-family: "Century Gothic";
+	color: white;
+	font-size: 17px;
+}
+
+hr {
+	height: 20px;
+	border: 0;
+	box-shadow: 0 0 15px #91FFFF;
+	border-radius: 20px;
+}
+
+#qmgr {
+	width: 100%;
+}
+
+#msgtype, #hostname, #cname, #qname, #port {
+	width: 100%;
+}
+
+.button {
+	background-color: #91FFFF; /* Green */
+	border: none;
+	color: black;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 15px;
+}
+
+div.footer {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	padding: 1rem;
+	text-align: center;
+	font-size: 15px;
+	color: white;
+	width: 100%;
+	background-color: #848482;
+}
+
+.textbox {
+	border: 1px solid #c4c4c4;
+	height: 25px;
+	width: 275px;
+	font-size: 12px;
+	padding: 4px 4px 4px 4px;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+}
+
+.textbox:focus {
+	outline: none;
+	border: 1px solid #7bc1f7;
+	box-shadow: 0px 0px 8px #7bc1f7;
+	-moz-box-shadow: 0px 0px 8px #7bc1f7;
+	-webkit-box-shadow: 0px 0px 8px #7bc1f7;
+}
+
+.logo {
+	font-family: "Century Gothic";
+	color: white;
+	font-size: 25px;
+}
+
+.logo1 {
+	font-family: "Andalus";
+	color: white;
+	font-size: 12px;
+}
+
+.welcome {
+	font-family: "Century Gothic";
+	color: white;
+	font-size: 25px;
+}
+</style>
+</head>
+<body>
+   <!-- Header  -->
+	<div class="header">
+		<p>
+			<font class="logo"><b>i|N a u t i x</b></font>&nbsp;<b
+				style="margin-left: 23em"><font class="welcome">WELCOME
+					TO THE REPLAY SYSTEM</font></b> <br>
+			<font class="logo1">A BNYMELLON COMPANY</font>
+		</p>
+	</div>
+	
+	
+	<!-- body  -->
+	<div class="page">
+		<hr>
+		<br>
+		<form method="post" enctype="multipart/form-data" id="replayForm"
+			name="replayForm" action="ReplayServlet" onsubmit="showProgress()">
+			<table align="center">
+
+				<tr>
+					<td><label for="file">Choose your file:</label></td>
+					<td><input type="file" id="filePath" name="filePath"
+						value="Browse" size="30" /></td>
+				</tr>
+				<tr>
+					<td><label for="msgtype">Enter your message type:</label></td>
+					<td><select class="textbox" id="msgtype" name="msgtype">
+							<option VALUE="BLANK" selected="selected">
+							<option value="FTSIN">FTSIN</option>
+							<option value="TPIN">TPIN</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td><label for="qmgr">Choose your queue manager:</label></td>
+					<td><select class="textbox" id="qmgr" name="qmgr">
+							<option VALUE="BLANK" selected="selected">
+								<!-- <option value="ABDA">ABDA</option>
+						<option value="ABUA">ABUA</option> -->
+							<option value="ABYA">ABYA</option>
+							<option value="ABDA">ABDA</option>
+							<!-- <option value="ABZA">ABZA</option>
+						<option value="ABKA">ABKA</option> -->
+							<option value="ABJA">ABJA</option>
+							<option value="ABVA">ABVA</option>
+							<option value="ABUA">ABUA</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td><label for="hostname">Enter your host-name:</label></td>
+					<td><input class="textbox" type="text" id="hostname" size="30"
+						name="hostname"></td>
+				</tr>
+				<tr>
+					<td><label for="qname">Enter your queue-name:</label></td>
+					<td><input class="textbox" type="text" id="qname" size="30"
+						name="qname"></td>
+				</tr>
+				<tr>
+					<td><label for="cname">Enter your channel-name:</label></td>
+					<td><input class="textbox" type="text" id="cname" size="30"
+						name="cname"></td>
+					<!-- onfocus="this.blur()" readonly="readonly" -->
+				</tr>
+				<tr>
+					<td><label for="port">Enter your port:</label></td>
+					<td><input class="textbox" type="text" id="port" size="30"
+						name="port"></td>
+				</tr>
+				<tr></tr>
+				<tr>
+					<td colspan="2" align="center"><input class="button"
+						type="submit" id="submit" value="Submit" onclick="clicked(event)">
+						<input class="button" type="reset" id="reset" value="Reset"
+						onClick="resetVal()"></td>
+				</tr>
+			</table>
+		</form>
+
+		<!-- FOR MESSAGE COUNT -->
+		<div align="center" id="countDiv">
+			<label> <%
+ 	if (session.getAttribute("count") == null)
+ 		session.setAttribute("count", 0);
+ %> <!-- IF ELSE BLOCK FOR COUNTING THE MESSAGE IF MESSAGE COUNT IS GREATER THAN ZERO THEN COLOR WILL CHANGE -->
+				message count is :
+			</label>
+			<%
+				if (Integer.parseInt(session.getAttribute("count").toString()) != 0) {
+			%>
+			<font color="RED"><%=session.getAttribute("count")%></font>
+			<%
+				} else {
+			%>
+			<font color="#ff9900"><%=session.getAttribute("count")%></font>
+			<%
+				}
+			%>
+			<br>
+			<%
+				if (session.getAttribute("error") != null
+						&& !(session.getAttribute("error").toString().isEmpty())) {
+			%>
+			<font color="RED"> Error message : <%=session.getAttribute("error")%></font>
+			<%
+				}
+			%>
+		</div>
+
+		<div id="dBResult"></div>
+
+	</div>
+
+	<!-- script is for resetting the values -->
+	<script type="text/javascript">
+		function resetVal() {
+	<%session.removeAttribute("error");%>
+		window.location.reload();
+	<%session.removeAttribute("count");%>
+		}
+	</script>
+	<script>
+		function clicked(e) {
+			if (!confirm('verified properly ?'))
+				e.preventDefault();
+		}
+	</script>
+	<!-- FOR DISPLAYING BUSY SPINNER -->
+	<center>
+		<div id="progressBar" style="display: none;">
+			<img id="loading" src="./hourglass.gif" />
+			<p id="waitMsg">Message Count will be displayed soon.</p>
+		</div>
+	</center>
+	<script type="text/javascript">
+		function showProgress() {
+			document.getElementById('replayForm').style.display = 'none';
+			document.getElementById('countDiv').style.display = 'none';
+			var pb = document.getElementById("progressBar");
+			waitMesg = document.getElementById("waitMsg");
+			Img = document.getElementById('loading');
+			pb.innerHTML = '<img src="./hourglass.gif"/>';
+			Img.style.display = "inline";
+			pb.style.display = 'inline';
+			pb1.style.display = 'inline';
+		}
+	</script>
+	
+	<!-- footer  -->
+	<div class="footer">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0"
+			width="100%" align="Center">
+			<tr>
+				<td width="954" valign="bottom" height="15" class="ContentFont">&copy;
+					<script>
+						document.write(new Date().getFullYear())
+					</script> iNautix Technologies India Pvt. Ltd., The Bank of New York Mellon
+					Corporation. All rights reserved. &nbsp;<a
+					href="internal.aspx?htmlname=common\CopyRightFull.htm">Copyright</a>&nbsp;
+					| &nbsp;<a href="internal.aspx?htmlname=common\Disclaimer.htm">Disclaimer</a>
+					| &nbsp;<a href="redirect.aspx?redirectto=Feedback.aspx">Feedback</a>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
